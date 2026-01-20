@@ -5,6 +5,13 @@ from models import db, Author, Post
 import logging
 from faker import Faker
 
+# ------------------ ADD THIS AT THE TOP OF THE FILE ------------------
+# from server.app import app  # already imported above
+# from server.models import db, Author, Post   # already imported above
+
+with app.app_context():
+    db.create_all()   # this creates the tables if they don't exist
+# ----------------------------------------------------------------------
 
 LOGGER = logging.getLogger(__name__)
 
